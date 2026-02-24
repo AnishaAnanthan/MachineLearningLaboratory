@@ -1,0 +1,33 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label=<chest_pain_type_Typical angina &le; 0.5<br/>gini = 0.499<br/>samples = 820<br/>value = [397, 423]<br/>class = Disease>, fillcolor="#f3f9fd"] ;
+1 [label=<thalassemia_Reversable Defect &le; 0.5<br/>gini = 0.354<br/>samples = 422<br/>value = [97, 325]<br/>class = Disease>, fillcolor="#74baed"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<oldpeak &le; 2.1<br/>gini = 0.234<br/>samples = 317<br/>value = [43, 274]<br/>class = Disease>, fillcolor="#58ace9"] ;
+1 -> 2 ;
+3 [label=<gini = 0.183<br/>samples = 295<br/>value = [30.0, 265.0]<br/>class = Disease>, fillcolor="#4fa8e8"] ;
+2 -> 3 ;
+4 [label=<gini = 0.483<br/>samples = 22<br/>value = [13, 9]<br/>class = No Disease>, fillcolor="#f7d8c2"] ;
+2 -> 4 ;
+5 [label=<Max_heart_rate &le; 132.5<br/>gini = 0.5<br/>samples = 105<br/>value = [54.0, 51.0]<br/>class = No Disease>, fillcolor="#fef8f4"] ;
+1 -> 5 ;
+6 [label=<gini = 0.0<br/>samples = 15<br/>value = [15, 0]<br/>class = No Disease>, fillcolor="#e58139"] ;
+5 -> 6 ;
+7 [label=<gini = 0.491<br/>samples = 90<br/>value = [39, 51]<br/>class = Disease>, fillcolor="#d0e8f9"] ;
+5 -> 7 ;
+8 [label=<vessels_colored_by_flourosopy_Zero &le; 0.5<br/>gini = 0.371<br/>samples = 398<br/>value = [300, 98]<br/>class = No Disease>, fillcolor="#edaa7a"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label=<oldpeak &le; 0.45<br/>gini = 0.07<br/>samples = 221<br/>value = [213, 8]<br/>class = No Disease>, fillcolor="#e68640"] ;
+8 -> 9 ;
+10 [label=<gini = 0.208<br/>samples = 51<br/>value = [45, 6]<br/>class = No Disease>, fillcolor="#e89253"] ;
+9 -> 10 ;
+11 [label=<gini = 0.023<br/>samples = 170<br/>value = [168, 2]<br/>class = No Disease>, fillcolor="#e5823b"] ;
+9 -> 11 ;
+12 [label=<thalassemia_Reversable Defect &le; 0.5<br/>gini = 0.5<br/>samples = 177<br/>value = [87, 90]<br/>class = Disease>, fillcolor="#f8fcfe"] ;
+8 -> 12 ;
+13 [label=<gini = 0.354<br/>samples = 100<br/>value = [23, 77]<br/>class = Disease>, fillcolor="#74baed"] ;
+12 -> 13 ;
+14 [label=<gini = 0.281<br/>samples = 77<br/>value = [64, 13]<br/>class = No Disease>, fillcolor="#ea9b61"] ;
+12 -> 14 ;
+}
