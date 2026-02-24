@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Heart Disease Prediction</h1>
+            <p>Enter patient details below for assessment</p>
+        </header>
+
+        <form id="predictionForm">
+            <div class="form-grid">
+                <!-- Row 1 -->
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" required min="1" max="120">
+                </div>
+                
+                <div class="form-group">
+                    <label for="sex">Sex</label>
+                    <select id="sex" name="sex" required>
+                        <option value="" disabled selected>Select Sex</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="form-group">
+                    <label for="chest_pain_type">Chest Pain Type</label>
+                    <select id="chest_pain_type" name="chest_pain_type" required>
+                        <option value="" disabled selected>Select Type</option>
+                        <option value="Typical angina">Typical angina</option>
+                        <option value="Atypical angina">Atypical angina</option>
+                        <option value="Non-anginal pain">Non-anginal pain</option>
+                        <option value="Asymptomatic">Asymptomatic</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="resting_blood_pressure">Resting Blood Pressure (mm Hg)</label>
+                    <input type="number" id="resting_blood_pressure" name="resting_blood_pressure" required min="50" max="250">
+                </div>
+
+                <!-- Row 3 -->
+                <div class="form-group">
+                    <label for="cholesterol">Cholesterol (mg/dl)</label>
+                    <input type="number" id="cholesterol" name="cholesterol" required min="100" max="600">
+                </div>
+
+                <div class="form-group">
+                    <label for="fasting_blood_sugar">Fasting Blood Sugar</label>
+                    <select id="fasting_blood_sugar" name="fasting_blood_sugar" required>
+                        <option value="" disabled selected>Select Result</option>
+                        <option value="Lower than 120 mg/ml">Lower than 120 mg/ml</option>
+                        <option value="Greater than 120 mg/ml">Greater than 120 mg/ml</option>
+                    </select>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="form-group">
+                    <label for="rest_ecg">Resting ECG Results</label>
+                    <select id="rest_ecg" name="rest_ecg" required>
+                        <option value="" disabled selected>Select Result</option>
+                        <option value="Normal">Normal</option>
+                        <option value="ST-T wave abnormality">ST-T wave abnormality</option>
+                        <option value="Left ventricular hypertrophy">Left ventricular hypertrophy</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="max_heart_rate">Max Heart Rate</label>
+                    <input type="number" id="max_heart_rate" name="max_heart_rate" required min="60" max="220">
+                </div>
+
+                <!-- Row 5 -->
+                <div class="form-group">
+                    <label for="exercise_induced_angina">Exercise Induced Angina</label>
+                    <select id="exercise_induced_angina" name="exercise_induced_angina" required>
+                        <option value="" disabled selected>Select Option</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="oldpeak">Oldpeak (ST depression)</label>
+                    <input type="number" id="oldpeak" name="oldpeak" step="0.1" required min="0" max="10">
+                </div>
+
+                <!-- Row 6 -->
+                <div class="form-group">
+                    <label for="slope">Slope of Peak Exercise ST Segment</label>
+                    <select id="slope" name="slope" required>
+                        <option value="" disabled selected>Select Slope</option>
+                        <option value="Upsloping">Upsloping</option>
+                        <option value="Flat">Flat</option>
+                        <option value="Downsloping">Downsloping</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="vessels_colored_by_flourosopy">Number of Major Vessels (0-3)</label>
+                    <select id="vessels_colored_by_flourosopy" name="vessels_colored_by_flourosopy" required>
+                         <option value="" disabled selected>Select Number</option>
+                         <option value="Zero">Zero</option>
+                         <option value="One">One</option>
+                         <option value="Two">Two</option>
+                         <option value="Three">Three</option>
+                    </select>
+                </div>
+                
+                 <!-- Row 7 -->
+                <div class="form-group full-width">
+                     <label for="thalassemia">Thalassemia</label>
+                     <select id="thalassemia" name="thalassemia" required>
+                         <option value="" disabled selected>Select Type</option>
+                         <option value="Normal">Normal</option>
+                         <option value="Fixed Defect">Fixed Defect</option>
+                         <option value="Reversable Defect">Reversable Defect</option>
+                     </select>
+                </div>
+
+            </div>
+
+            <button type="submit" id="predictBtn">
+                <span>Analyze Risk</span>
+            </button>
+        </form>
+
+        <div id="result" class="result-container hidden">
+            <h2 id="resultText"></h2>
+            <p id="resultDetails"></p>
+            <button id="resetBtn">Check Another Patient</button>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
