@@ -1,0 +1,16 @@
+Day,HiddenState,Observation
+1,Rainy,Umbrella
+2,Rainy,Umbrella
+3,Sunny,NoUmbrella
+4,Rainy,Umbrella
+5,Sunny,NoUmbrella
+6,Sunny,NoUmbrella
+7,Rainy,Umbrella
+8,Rainy,Umbrella
+9,Sunny,NoUmbrella
+10,Rainy,Umbrella
+11,Sunny,NoUmbrella
+12,Sunny,NoUmbrella
+13,Rainy,Umbrella
+14,Rainy,Umbrella
+15,Sunny,NoUmbrella
